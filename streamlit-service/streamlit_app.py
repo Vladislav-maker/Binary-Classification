@@ -1,12 +1,32 @@
 import streamlit as st
 import requests
 from requests.exceptions import ConnectionError
+from dataclasses import dataclass
+
+@dataclass
+class Row:
+    id:int
+    name: str
+
+    def __str__(self):
+        return self.name
 
 ip_api = "api"
 port_api = "5000"
 
 st.title("Предсказание выдачи транспортной страховки")
 st.write("Введите данные о клиенте:")
+gender = st.selectbox("Пол", [Row("Female", "Жещина"), Row("Male", "Мужчина")])
+age = st.number_input("Возраст", min_value=0, max_value=150)
+driving_license = st.selectbox("Наличие водительских прав", [Row(1, "Есть"), Row(0, "Нет")])
+region_code = st.number_input("Код региона", min_value=0., max_value=1000.)
+previously_insured = st.selectbox("Был ли ранее застрахован", [Row(1, "Да"), Row(0, "Нет")])
+vehicle_age = st.number_input("Возраст транспортного средства, округленный до года", min_value=0, max_value=1000)
+vehicle_damage = st.selectbox("Повреждение транспортного средства", [Row("Yes", "Было"), Row("No", "Не было")])
+annual_premium = st.number_input("", min_value=0.0)
+policy_sales_channel = st.number_input("", min_value=0., max_value=1000.)
+vintage= st.number_input("", value=0)
+
 
 if st.button("Предсказать"):
     data = {}

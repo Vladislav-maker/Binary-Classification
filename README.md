@@ -43,7 +43,8 @@
 | Precision   | 0.88              | 0.00              |  
 | Recall      | 1.00              | 0.00              |  
 | F1-Score    | 0.93              | 0.00              |  
-| Support     |    5,6 M          |    793   K        |  
+| Support     |    5,6 M          |    793   K        |
+
 F1-Score w: 0.82
 
 ### Classification Report (LightGBM - The best model)  

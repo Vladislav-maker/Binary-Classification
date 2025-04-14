@@ -60,7 +60,3 @@ F1-Score w: 0.89
 
 **Итоговый F1-Score weighted:** **0.89** 
 
-## 🚀 Запуск решения  
-1. **Собрать Docker-образ:**  
-   ```bash  
-   docker build -t insurance-prediction .  

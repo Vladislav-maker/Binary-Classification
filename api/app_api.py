@@ -84,10 +84,10 @@ def predict_model(input_data: PredictionInput):
     predictions = model.predict(new_data)
 
     # Преобразование результата в человеко-читаемый формат
-    result = "Insurance approved" if predictions[0] == 1 else "Insurance not approved"
+    result = "Selected to offer car insurance" if predictions[0] == 1 else "Not selected for auto insurance offer"
 
     return {"prediction": result}
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=5000)
+    uvicorn.run(app, host="0.0.0.0", port=5000)

@@ -43,17 +43,19 @@
 | Precision   | 0.88              | 0.00              |  
 | Recall      | 1.00              | 0.00              |  
 | F1-Score    | 0.93              | 0.00              |  
-| F1-Score w  |                  0.82                 |  
-| Support     |    5,6 M            |    793   K      |  
+| Support     |    5,6 M          |    793   K        |  
+F1-Score w: 0.82
 
 ### Classification Report (LightGBM - The best model)  
 
-| Metric      | Class 0 (Negative) | Class 1 (Positive) |  
+| Metric      | Class 0 (Negative) | Class 1 (Positive) |
 |-------------|-------------------|-------------------|  
-| Precision   | 0.92              | 0.78              |  
-| Recall      | 0.85              | 0.88              |  
-| F1-Score    | 0.88              | 0.83              |  
-| Support     | 12,000            | 2,000             |  
+| Precision   | 0.98              | 0.3              |  
+| Recall      | 0.71              | 0.88              |  
+| F1-Score    |    0.82           | 0.45              |  
+| Support     |    5,6 M          |    793   K        |  
+
+F1-Score w: 0.89
 
 **Итоговый F1-Score weighted:** **0.89** 
 

@@ -8,7 +8,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./api/model.pkl:/usr/src/app/model.pkl
+      - ./api/lgb_model.pkl:/usr/src/app/lgb_model.pkl
 
   streamlit-web:
     build:
@@ -17,6 +17,6 @@ services:
     image: streamlit-service:latest
     container_name: streamlit-service
     ports:
-      - "8500:8500"
+      - "8501:8501"
     volumes:
       - ./streamlit-service/streamlit_app.py:/usr/src/app/streamlit_app.py

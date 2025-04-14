@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 app = FastAPI()
 
 # Загрузка модели из файла pickle
-with open('./api/lgb_model.pkl', 'rb') as f:
+with open('lgb_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Счетчик запросов

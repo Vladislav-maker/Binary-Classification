@@ -15,8 +15,8 @@ RUN pip3 install -r requirements.txt
 
 COPY /streamlit-service /usr/src/app/
 
-EXPOSE 8500
+EXPOSE 8501
 
 HEALTHCHECK CMD curl --fail http://localhost:8500/_stcore/health
 
-ENTRYPOINT ["streamlit", "run", "streamlit_app.py", "--server.port=8500", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]

@@ -23,13 +23,23 @@ region_code = st.number_input("Код региона", min_value=0., max_value=1
 previously_insured = st.selectbox("Был ли ранее застрахован", [Row(1, "Да"), Row(0, "Нет")])
 vehicle_age = st.number_input("Возраст транспортного средства, округленный до года", min_value=0, max_value=1000)
 vehicle_damage = st.selectbox("Повреждение транспортного средства", [Row("Yes", "Было"), Row("No", "Не было")])
-annual_premium = st.number_input("", min_value=0.0)
-policy_sales_channel = st.number_input("", min_value=0., max_value=1000.)
-vintage= st.number_input("", value=0)
+annual_premium = st.number_input("Страховой взнос", min_value=0.0)
+policy_sales_channel = st.number_input("Канал продаж", min_value=0.)
+vintage= st.number_input("Является клиентом компани, лет", value=0)
 
 
 if st.button("Предсказать"):
-    data = {}
+    data = {"Gender": gender.id,
+        "Age": int(age),
+        "Driving_License": driving_license.id,
+        "Region_Code": float(region_code),
+        "Previously_Insured": previously_insured.id,
+        "Vehicle_Age": int(vehicle_age),
+        "Vehicle_Damage": vehicle_damage.id,
+        "Annual_Premium": float(annual_premium),
+        "Policy_Sales_Channel": float(policy_sales_channel),
+        "Vintage": int(vintage)
+        }
     try:
         response = requests.post(f"http://{ip_api}:{port_api}/predict_model", json=data)
         if response.status_code == 200:

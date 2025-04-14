@@ -40,10 +40,11 @@
 Минимальная предобработка данных, до удаления записей согласно выводам из EDA
 | Metric      | Class 0 (Negative) | Class 1 (Positive) |  
 |-------------|-------------------|-------------------|  
-| Precision   | 0.92              | 0.78              |  
-| Recall      | 0.85              | 0.88              |  
-| F1-Score    | 0.88              | 0.83              |  
-| Support     | 12,000            | 2,000             |  
+| Precision   | 0.88              | 0.00              |  
+| Recall      | 1.00              | 0.00              |  
+| F1-Score    | 0.93              | 0.00              |  
+| F1-Score w  |                  0.82                 |  
+| Support     |    5,6 M            |    793   K      |  
 
 ### Classification Report (LightGBM - The best model)  
 

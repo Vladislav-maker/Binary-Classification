@@ -15,6 +15,9 @@
 - [Елизавета Крылова](https://github.com/ElizavetaWow) – Docker/Deployment  
 - [Владислав Маринин](https://github.com/Vladislav-maker) – EDA/Visualization/Unit tests for API
 
+**Демонстрация решения:**
+![Demo GIF](./images/ДЗ№1.gif)
+
 ## 📊 EDA: Ключевые выводы  
 **Проблема:** Дисбаланс классов (85 % Negative / 15 % Positive).  
 

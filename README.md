@@ -56,7 +56,7 @@ F1-Score w: 0.82
 | F1-Score    |    0.82           | 0.45              |  
 | Support     |    5,6 M          |    793   K        |  
 
-F1-Score w: 0.89
+F1-Score w: 0.78
 
-**Итоговый F1-Score weighted:** **0.89** 
+**Итоговый F1-Score weighted:** **0.78** 
 

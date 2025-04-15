@@ -23,9 +23,9 @@ class PredictionInput(BaseModel):
     Previously_Insured: Literal[0, 1] = Field (..., example=1, description="Был ли ранее застрахован")
     Vehicle_Age: int = Field (..., example=1, description="Возраст транспортного средства, округленный до года")
     Vehicle_Damage: Literal["No", "Yes"] = Field (..., example="Yes", description="Повреждение транспортного средства")
-    Annual_Premium: float = Field (..., example=2630.0, description="Повреждение транспортного средства")
-    Policy_Sales_Channel: float = Field (..., example=152.0, description="Повреждение транспортного средства")
-    Vintage: int = Field (..., example=187, description="")
+    Annual_Premium: float = Field (..., example=2630.0, description="Страховой взнос")
+    Policy_Sales_Channel: float = Field (..., example=152.0, description="Канал продаж")
+    Vintage: int = Field (..., example=187, description="Является клиентом компани, лет")
 
 @app.get("/stats")
 def stats():
@@ -84,7 +84,7 @@ def predict_model(input_data: PredictionInput):
     predictions = model.predict(new_data)
 
     # Преобразование результата в человеко-читаемый формат
-    result = "Selected to offer car insurance" if predictions[0] == 1 else "Not selected for auto insurance offer"
+    result = "Клиент выбран для предложения страховки" if predictions[0] > 0.49 else "Клиент не выбран для предложения страховки"
 
     return {"prediction": result}
 

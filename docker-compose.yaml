@@ -9,6 +9,7 @@ services:
       - "5000:5000"
     volumes:
       - ./api/lgb_model.pkl:/usr/src/app/lgb_model.pkl
+      - ./api/app_api.py:/usr/src/app/app_api.py
 
   streamlit-web:
     build:

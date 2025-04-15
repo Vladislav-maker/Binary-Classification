@@ -58,16 +58,16 @@ def predict_model(input_data: PredictionInput):
     # Создание DataFrame с ТОЧНЫМ соответствием столбцов обучению
     new_data = pd.DataFrame({
         'Age': [input_data.Age],
-        'Region_Code': [input_data.Region_Code],
-        'Previously_Insured': [input_data.Previously_Insured],
         'Annual_Premium': [input_data.Annual_Premium],
-        'Policy_Sales_Channel': [input_data.Policy_Sales_Channel],
-        'Vintage': [input_data.Vintage],
         'Driving_License': [input_data.Driving_License],
+        'Gender_Male': [gender_map[input_data.Gender]],
+        'Policy_Sales_Channel': [input_data.Policy_Sales_Channel],
+        'Previously_Insured': [input_data.Previously_Insured],
+        'Region_Code': [input_data.Region_Code],
         'Vehicle_Age_< 1 Year': [vehicle_age_less_1],
         'Vehicle_Age_> 2 Years': [vehicle_age_greater_2],
         'Vehicle_Damage_Yes': [vehicle_damage_map[input_data.Vehicle_Damage]],
-        'Gender_Male': [gender_map[input_data.Gender]]
+        'Vintage': [input_data.Vintage]
     })
 
     # Важно: приведение типов для полного соответствия

@@ -25,7 +25,7 @@ vehicle_age = st.number_input("Возраст транспортного сре�
 vehicle_damage = st.selectbox("Повреждение транспортного средства", [Row("Yes", "Было"), Row("No", "Не было")])
 annual_premium = st.number_input("Страховой взнос", min_value=0.0, value=100.)
 policy_sales_channel = st.number_input("Канал продаж", min_value=0., value=10.)
-vintage= st.number_input("Является клиентом компани, лет", value=0)
+vintage= st.number_input("Является клиентом компани, дней", value=0)
 
 
 if st.button("Предсказать"):
